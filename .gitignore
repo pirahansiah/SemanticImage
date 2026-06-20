@@ -5,3 +5,8 @@
 xcuserdata/
 DerivedData/
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+
+# macOS and career assets
+CAREER_IMPACT.md
+._pack-*.idx
+._*
