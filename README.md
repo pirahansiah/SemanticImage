@@ -1,15 +1,28 @@
 # SemanticImage
 
-A collection of easy-to-use image / video filters.
+[![Swift](https://img.shields.io/badge/Swift-5.9%2B-orange?logo=swift&logoColor=white)](https://swift.org/)
+[![Platform](https://img.shields.io/badge/Platform-iOS%2016%2B-blue?logo=apple&logoColor=white)]()
+[![Swift Package Manager](https://img.shields.io/badge/SPM-Compatible-brightgreen.svg)](https://swift.org/package-manager/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-# How to use
+A collection of easy-to-use image / video filters powered by **Apple Vision Framework** and **Core ML**.
+
+## Features
+
+- Person segmentation and background replacement
+- Saliency-based object detection and compositing
+- Real-time video background effects
+- Face and body detection with multi-target support
+- CIFilter pipeline integration for video processing
+
+## How to use
 
 ### Setting Up
 
-1, Add SemanticImage to your project as Swift Package with Swift Package Manager. 
+1. Add SemanticImage to your project as Swift Package with Swift Package Manager.
    Or just drag SemanticImage.swift to your project.
 
-2, Import and initialize SemanticImage
+2. Import and initialize SemanticImage
 
 ```swift
 import SemanticImage
@@ -19,7 +32,7 @@ import SemanticImage
 let semanticImage = SemanticImage()
 ```
 
-**Requires iOS 14 or above**
+**Requires iOS 16+** (iOS 14 was the original target; iOS 16+ recommended for best Vision framework performance)
 
 # Filter Collection
 
@@ -151,16 +164,28 @@ sematicImage.swapBGOfSalientObjectVideo(videoURL: url, backgroundUIImage: uiImag
     // This process takes about the same time as the video playback time.
 ```
 
-# Author
+## 2025–2026: Modern iOS ML Alternatives
 
-Daisuke Majima
+| Framework | Use Case |
+|-----------|----------|
+| **Vision Framework** (iOS 17+) | Person segmentation, saliency, face/body detection (used by this library) |
+| **Core ML + Create ML** | Custom model deployment, on-device training, model personalization |
+| **Apple Intelligence (on-device)** | Semantic understanding, image generation, smart compositing (iOS 18+) |
+| **Vision Pro (visionOS)** | Spatial computing, 3D scene understanding, hand/eye tracking |
+| **MediaPipe (iOS)** | Cross-platform real-time CV (pose, face mesh, hand landmarks) |
+| **ONNX Runtime Mobile** | Deploy PyTorch/TensorFlow models on iOS with optimized inference |
 
-Freelance iOS programmer from Japan.
+### Recommendations for 2025+
 
-PROFILES:
+- Use **Vision Framework** for built-in person segmentation (VNGeneratePersonSegmentationRequest)
+- For custom models, convert to **Core ML** format using coremltools
+- Consider **Create ML** for training custom classifiers with your own data
+- For cross-platform consistency, export models to **ONNX** and use ONNX Runtime
 
-WORKS:
+## Author
 
-BLOGS: Medium
+Daisuke Majima — Freelance iOS programmer from Japan.
 
-CONTACTS: rockyshikoku@gmail.com
+Contact: rockyshikoku@gmail.com
+
+Maintained by **Farshid Pirahansiah** ([pirahansiah.com](https://www.pirahansiah.com))
